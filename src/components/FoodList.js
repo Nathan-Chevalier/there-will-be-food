@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllFood } from "../services/foodService";
+import "./food.css";
 
 export const FoodList = () => {
   const [foods, setFoods] = useState([]);
@@ -20,8 +21,8 @@ export const FoodList = () => {
               <div className="food-image">{food.image.name}</div>
               <div className="food-details-small-a">
                 <h3>{food.name}</h3>
-                <h4>{food.storageDate}</h4>
-                <h4>{food.expirationDate}</h4>
+                <h4>Stored on: {food.storageDate}</h4>
+                <h4>Expires on: {food.expirationDate}</h4>
               </div>
               <div>
                 <div className="food-type-small">{food.type.name}</div>
