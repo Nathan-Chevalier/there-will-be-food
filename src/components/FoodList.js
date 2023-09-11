@@ -2,13 +2,38 @@ import { useState, useEffect } from "react";
 import { getAllFood } from "../services/foodService";
 
 export const FoodList = () => {
-  const [allFood, setAllFood] = useState([]);
+  const [foods, setFoods] = useState([]);
 
   useEffect(() => {
     getAllFood().then((foodArray) => {
-      setAllFood(foodArray);
+      setFoods(foodArray);
     });
   }, []);
 
-  return <>Food List</>;
+  return (
+    <div className="foods-container">
+      <h2>Foods:</h2>
+      <div className="food-cards-small">
+        {foods.map((food) => {
+          return (
+            <div className="food-card">
+              <div className="food-image">{food.image.name}</div>
+              <div className="food-details-small-a">
+                <h3>{food.name}</h3>
+                <h4>{food.storageDate}</h4>
+                <h4>{food.expirationDate}</h4>
+              </div>
+              <div>
+                <div className="food-type-small">{food.type.name}</div>
+                <div className="food-storage-small">{food.storage.name}</div>
+                <div className="food-quantity">
+                  {food.quantity} {food.quantityUnit.name}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
