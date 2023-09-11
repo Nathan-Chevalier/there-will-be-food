@@ -1,4 +1,5 @@
+import { FoodList } from "./components/FoodList";
 
 export const App = () => {
-  return <div>Hello World!</div>
-}
+  return <FoodList />;
+};
