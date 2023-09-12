@@ -36,7 +36,7 @@ export const FoodForm = () => {
           <fieldset>
             <div className="image-select">
               <div>Select Image:</div>
-              <select className="image-select-dropdown">
+              <select className="image-select-dropdown" onChange={() => {}}>
                 <option value={0}>IMAGE SELECT IMAGE</option>
                 {images.map((imageObj) => {
                   return (
@@ -52,6 +52,21 @@ export const FoodForm = () => {
               </select>
             </div>
           </fieldset>
+        </div>
+        <div className="data-sector">
+          <div className="name-storage-row">
+            <fieldset>
+              <label>Food Name: </label>
+              <input
+                id="name"
+                type="text"
+                className="name-input"
+                placeholder="Input food name..."
+                value={userValues.name}
+                onChange={() => {}}
+              />
+            </fieldset>
+          </div>
         </div>
       </form>
     </div>
