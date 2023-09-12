@@ -73,6 +73,7 @@ export const FoodForm = () => {
                     <div key={storageObj.id} className="storage-radio">
                       <input
                         type="radio"
+                        id="storage"
                         value={storageObj.id}
                         checked={userValues.storageId === storageObj.id}
                         onChange={() => {}}
@@ -82,6 +83,18 @@ export const FoodForm = () => {
                   </label>
                 );
               })}
+            </fieldset>
+          </div>
+          <div className="description-row">
+            <fieldset>
+              <label>Description: </label>
+              <input
+                id="description"
+                className="description-input"
+                placeholder="Input description (Optional)..."
+                value={userValues.description}
+                onChange={() => {}}
+              />
             </fieldset>
           </div>
         </div>
