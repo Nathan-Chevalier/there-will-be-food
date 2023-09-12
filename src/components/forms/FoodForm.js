@@ -66,6 +66,23 @@ export const FoodForm = () => {
                 onChange={() => {}}
               />
             </fieldset>
+            <fieldset>
+              {storages.map((storageObj) => {
+                return (
+                  <label>
+                    <div key={storageObj.id} className="storage-radio">
+                      <input
+                        type="radio"
+                        value={storageObj.id}
+                        checked={userValues.storageId === storageObj.id}
+                        onChange={() => {}}
+                      />
+                    </div>
+                    {storageObj.name}
+                  </label>
+                );
+              })}
+            </fieldset>
           </div>
         </div>
       </form>
