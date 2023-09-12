@@ -42,6 +42,29 @@ export const FoodForm = () => {
     });
   }, []);
 
+  const handleSaveFood = (event) => {
+    event.preventDefault();
+
+    if (
+      userValues.storageId &&
+      userValues.imageId &&
+      userValues.name &&
+      userValues.typeId &&
+      userValues.description &&
+      userValues.expirationDate &&
+      userValues.quantity &&
+      userValues.quantityUnitId
+    ) {
+      fetch("http://localhost:8088/foods", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userValues),
+      }).then(() => {});
+    } else {
+      alert("Please finish filling out the form!");
+    }
+  };
+
   return (
     <div>
       <h1>ADD FOOD</h1>
@@ -203,6 +226,14 @@ export const FoodForm = () => {
                 );
               })}
             </fieldset>
+            <button
+              className="save-food-button"
+              onClick={(event) => {
+                handleSaveFood(event);
+              }}
+            >
+              Save Food
+            </button>
           </div>
         </div>
       </form>
