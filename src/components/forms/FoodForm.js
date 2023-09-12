@@ -54,7 +54,7 @@ export const FoodForm = () => {
           </fieldset>
         </div>
         <div className="data-sector">
-          <div className="name-storage-row">
+          <div className="name-type-row">
             <fieldset>
               <label>Food Name: </label>
               <input
@@ -67,22 +67,21 @@ export const FoodForm = () => {
               />
             </fieldset>
             <fieldset>
-              {storages.map((storageObj) => {
-                return (
-                  <label>
-                    <div key={storageObj.id} className="storage-radio">
-                      <input
-                        type="radio"
-                        id="storage"
-                        value={storageObj.id}
-                        checked={userValues.storageId === storageObj.id}
-                        onChange={() => {}}
-                      />
-                    </div>
-                    {storageObj.name}
-                  </label>
-                );
-              })}
+              <label>Food Type: </label>
+              <select className="type-select" onChange={() => {}}>
+                <option value={0}>Select type...</option>
+                {types.map((typeObj) => {
+                  return (
+                    <option
+                      key={typeObj.id}
+                      value={typeObj.id}
+                      className="type-select-option"
+                    >
+                      {typeObj.name}
+                    </option>
+                  );
+                })}
+              </select>
             </fieldset>
           </div>
           <div className="description-row">
@@ -117,7 +116,7 @@ export const FoodForm = () => {
             </fieldset>
             <fieldset>
               <select className="unit-select" onChange={() => {}}>
-                <option value={0}>Select Units</option>
+                <option value={0}>Select Units...</option>
                 {units.map((unitObj) => {
                   return (
                     <option
@@ -130,6 +129,26 @@ export const FoodForm = () => {
                   );
                 })}
               </select>
+            </fieldset>
+          </div>
+          <div className="storage-submit-row">
+            <fieldset>
+              {storages.map((storageObj) => {
+                return (
+                  <label>
+                    <div key={storageObj.id} className="storage-radio">
+                      <input
+                        type="radio"
+                        id="storage"
+                        value={storageObj.id}
+                        checked={userValues.storageId === storageObj.id}
+                        onChange={() => {}}
+                      />
+                    </div>
+                    {storageObj.name}
+                  </label>
+                );
+              })}
             </fieldset>
           </div>
         </div>
