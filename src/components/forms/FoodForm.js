@@ -7,12 +7,28 @@ import {
 } from "../../services/formService";
 
 export const FoodForm = () => {
-  const [userValues, setUserValues] = useState({});
+  // ? Pulls today's date and formats it to YYYY-MM-DD
+  const currentDate = new Date();
+  const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+  const today = formatDate(currentDate);
+
+  // ? States required for form
+  const [userValues, setUserValues] = useState({
+    storageDate: today,
+    storageId: 0,
+    userId: 1,
+  });
   const [types, setTypes] = useState([]);
   const [units, setUnits] = useState([]);
   const [storages, setStorages] = useState([]);
   const [images, setImages] = useState([]);
 
+  // ? Initial render, populating dropdowns
   useEffect(() => {
     getAllTypes().then((typeArray) => {
       setTypes(typeArray);
@@ -28,6 +44,29 @@ export const FoodForm = () => {
     });
   }, []);
 
+  const handleSaveFood = (event) => {
+    event.preventDefault();
+
+    if (
+      userValues.storageId &&
+      userValues.imageId &&
+      userValues.name &&
+      userValues.typeId &&
+      userValues.description &&
+      userValues.expirationDate &&
+      userValues.quantity &&
+      userValues.quantityUnitId
+    ) {
+      fetch("http://localhost:8088/foods", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userValues),
+      }).then(() => {});
+    } else {
+      alert("Please finish filling out the form!");
+    }
+  };
+
   return (
     <div>
       <h1>ADD FOOD</h1>
@@ -36,7 +75,14 @@ export const FoodForm = () => {
           <fieldset>
             <div className="image-select">
               <div>Select Image:</div>
-              <select className="image-select-dropdown" onChange={() => {}}>
+              <select
+                className="image-select-dropdown"
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.imageId = parseInt(event.target.value);
+                  setUserValues(copy);
+                }}
+              >
                 <option value={0}>IMAGE SELECT IMAGE</option>
                 {images.map((imageObj) => {
                   return (
@@ -62,13 +108,23 @@ export const FoodForm = () => {
                 type="text"
                 className="name-input"
                 placeholder="Input food name..."
-                value={userValues.name}
-                onChange={() => {}}
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.name = event.target.value;
+                  setUserValues(copy);
+                }}
               />
             </fieldset>
             <fieldset>
               <label>Food Type: </label>
-              <select className="type-select" onChange={() => {}}>
+              <select
+                className="type-select"
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.typeId = parseInt(event.target.value);
+                  setUserValues(copy);
+                }}
+              >
                 <option value={0}>Select type...</option>
                 {types.map((typeObj) => {
                   return (
@@ -91,8 +147,11 @@ export const FoodForm = () => {
                 id="description"
                 className="description-input"
                 placeholder="Input description (Optional)..."
-                value={userValues.description}
-                onChange={() => {}}
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.description = event.target.value;
+                  setUserValues(copy);
+                }}
               />
             </fieldset>
           </div>
@@ -102,7 +161,11 @@ export const FoodForm = () => {
                 id="expirationDate"
                 type="date"
                 value={userValues.expirationDate}
-                onChange={() => {}}
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.expirationDate = event.target.value;
+                  setUserValues(copy);
+                }}
               />
             </fieldset>
             <fieldset>
@@ -111,11 +174,22 @@ export const FoodForm = () => {
                 type="number"
                 placeholder="Input quantity..."
                 value={userValues.quantity}
-                onChange={() => {}}
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.quantity = parseInt(event.target.value);
+                  setUserValues(copy);
+                }}
               />
             </fieldset>
             <fieldset>
-              <select className="unit-select" onChange={() => {}}>
+              <select
+                className="unit-select"
+                onChange={(event) => {
+                  const copy = { ...userValues };
+                  copy.quantityUnitId = parseInt(event.target.value);
+                  setUserValues(copy);
+                }}
+              >
                 <option value={0}>Select Units...</option>
                 {units.map((unitObj) => {
                   return (
@@ -135,14 +209,18 @@ export const FoodForm = () => {
             <fieldset>
               {storages.map((storageObj) => {
                 return (
-                  <label>
-                    <div key={storageObj.id} className="storage-radio">
+                  <label key={storageObj.id}>
+                    <div className="storage-radio">
                       <input
                         type="radio"
                         id="storage"
                         value={storageObj.id}
-                        checked={userValues.storageId === storageObj.id}
-                        onChange={() => {}}
+                        checked={userValues.storageId == storageObj.id}
+                        onChange={(event) => {
+                          const copy = { ...userValues };
+                          copy.storageId = parseInt(event.target.value);
+                          setUserValues(copy);
+                        }}
                       />
                     </div>
                     {storageObj.name}
@@ -150,6 +228,14 @@ export const FoodForm = () => {
                 );
               })}
             </fieldset>
+            <button
+              className="save-food-button"
+              onClick={(event) => {
+                handleSaveFood(event);
+              }}
+            >
+              Save Food
+            </button>
           </div>
         </div>
       </form>
