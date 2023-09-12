@@ -1,5 +1,9 @@
-import { FoodList } from "./components/FoodList";
+import { FoodForm } from "./components/forms/FoodForm";
+import { FoodList } from "./components/lists/FoodList";
 
 export const App = () => {
-  return <FoodList />;
+  return <FoodForm />;
+  {
+    /*<FoodList />;*/
+  }
 };
