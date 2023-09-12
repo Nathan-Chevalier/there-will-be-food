@@ -17,6 +17,7 @@ export const FoodForm = () => {
   };
   const today = formatDate(currentDate);
 
+  // ? States required for form
   const [userValues, setUserValues] = useState({
     storageDate: today,
     storageId: 0,
@@ -27,6 +28,7 @@ export const FoodForm = () => {
   const [storages, setStorages] = useState([]);
   const [images, setImages] = useState([]);
 
+  // ? Initial render, populating dropdowns
   useEffect(() => {
     getAllTypes().then((typeArray) => {
       setTypes(typeArray);
