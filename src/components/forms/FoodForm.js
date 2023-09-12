@@ -97,6 +97,16 @@ export const FoodForm = () => {
               />
             </fieldset>
           </div>
+          <div className="expiration-quantity-row">
+            <fieldset>
+              <input
+                id="expirationDate"
+                type="date"
+                value={userValues.expirationDate}
+                onChange={() => {}}
+              />
+            </fieldset>
+          </div>
         </div>
       </form>
     </div>
