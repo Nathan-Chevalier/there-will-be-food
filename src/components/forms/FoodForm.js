@@ -28,5 +28,32 @@ export const FoodForm = () => {
     });
   }, []);
 
-  return <></>;
+  return (
+    <div>
+      <h1>ADD FOOD</h1>
+      <form>
+        <div className="image-sector">
+          <fieldset>
+            <div className="image-select">
+              <div>Select Image:</div>
+              <select className="image-select-dropdown">
+                <option value={0}>IMAGE SELECT IMAGE</option>
+                {images.map((imageObj) => {
+                  return (
+                    <option
+                      key={imageObj.id}
+                      value={imageObj.id}
+                      className="image-select-option"
+                    >
+                      {imageObj.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  );
 };
