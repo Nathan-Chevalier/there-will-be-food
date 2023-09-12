@@ -106,6 +106,31 @@ export const FoodForm = () => {
                 onChange={() => {}}
               />
             </fieldset>
+            <fieldset>
+              <input
+                id="quantity"
+                type="number"
+                placeholder="Input quantity..."
+                value={userValues.quantity}
+                onChange={() => {}}
+              />
+            </fieldset>
+            <fieldset>
+              <select className="unit-select" onChange={() => {}}>
+                <option value={0}>Select Units</option>
+                {units.map((unitObj) => {
+                  return (
+                    <option
+                      key={unitObj.id}
+                      value={unitObj.id}
+                      className="unit-select-option"
+                    >
+                      {unitObj.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </fieldset>
           </div>
         </div>
       </form>
