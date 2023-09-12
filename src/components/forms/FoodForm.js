@@ -5,4 +5,5 @@ export const FoodForm = () => {
   const [types, setTypes] = useState([]);
   const [units, setUnits] = useState([]);
   const [storages, setStorages] = useState([]);
+  const [images, setImages] = useState([]);
 };
