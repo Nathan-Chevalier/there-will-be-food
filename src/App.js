@@ -1,23 +1,23 @@
-import { FoodForm } from "./components/forms/FoodForm";
-import { FoodList } from "./components/lists/FoodList";
-import { Navbar } from "./components/nav/Navbar";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
+import { Authorized } from "./views/Authorized";
+import { ApplicationViews } from "./views/ApplicationViews";
 
 export const App = () => {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
       <Route
-        path="/"
+        path="*"
         element={
-          <>
-            <Navbar />
-            <Outlet />
-          </>
+          <Authorized>
+            <ApplicationViews />
+          </Authorized>
         }
-      >
-        <Route path="new" element={<FoodForm />} />
-        <Route path="all" element={<FoodList />} />
-      </Route>
+      />
     </Routes>
   );
 };

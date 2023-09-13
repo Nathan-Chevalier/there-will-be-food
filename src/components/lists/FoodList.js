@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllFood } from "../../services/foodService";
 import "./food.css";
 
-export const FoodList = () => {
+export const FoodList = ({ currentUser }) => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
