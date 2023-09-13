@@ -18,6 +18,11 @@ export const Navbar = ({ currentUser }) => {
         </Link>
       </li>
       <li className="navbar__item">
+        <Link className="navbar__link" to="/freezer">
+          Freezer
+        </Link>
+      </li>
+      <li className="navbar__item">
         <Link className="navbar__link" to="/all">
           View All
         </Link>

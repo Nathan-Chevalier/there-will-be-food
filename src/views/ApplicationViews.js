@@ -5,6 +5,7 @@ import { FoodList } from "../components/lists/FoodList";
 import { useEffect, useState } from "react";
 import { PantryList } from "../components/lists/PantryList";
 import { FridgeList } from "../components/lists/FridgeList";
+import { FreezerList } from "../components/lists/FreezerList";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -36,6 +37,10 @@ export const ApplicationViews = () => {
         <Route
           path="fridge"
           element={<FridgeList currentUser={currentUser} />}
+        />
+        <Route
+          path="freezer"
+          element={<FreezerList currentUser={currentUser} />}
         />
       </Route>
     </Routes>
