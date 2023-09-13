@@ -7,7 +7,7 @@ export const FridgeList = ({ currentUser }) => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    getFridgeFood().then((foodArray) => {
+    getFridgeFood(currentUser).then((foodArray) => {
       setFoods(foodArray);
     });
   }, []);

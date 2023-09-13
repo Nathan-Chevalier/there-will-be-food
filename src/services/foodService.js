@@ -1,23 +1,23 @@
-export const getAllFood = () => {
+export const getAllFood = (user) => {
   return fetch(
-    "http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage"
+    `http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&userId=${user.id}`
   ).then((res) => res.json());
 };
 
-export const getPantryFood = () => {
+export const getPantryFood = (user) => {
   return fetch(
-    "http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=1"
+    `http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=1&userId=${user.id}`
   ).then((res) => res.json());
 };
 
-export const getFridgeFood = () => {
+export const getFridgeFood = (user) => {
   return fetch(
-    "http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=2"
+    `http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=2&userId=${user.id}`
   ).then((res) => res.json());
 };
 
-export const getFreezerFood = () => {
+export const getFreezerFood = (user) => {
   return fetch(
-    "http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=3"
+    `http://localhost:8088/foods?_expand=type&_expand=quantityUnit&_expand=image&_expand=storage&storageId=3&userId=${user.id}`
   ).then((res) => res.json());
 };

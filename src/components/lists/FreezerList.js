@@ -7,7 +7,7 @@ export const FreezerList = ({ currentUser }) => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    getFreezerFood().then((foodArray) => {
+    getFreezerFood(currentUser).then((foodArray) => {
       setFoods(foodArray);
     });
   }, []);
