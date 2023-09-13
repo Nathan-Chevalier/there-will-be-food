@@ -28,7 +28,10 @@ export const ApplicationViews = () => {
           </>
         }
       >
-        <Route path="new" element={<FoodForm currentUser={currentUser} />} />
+        <Route path="food">
+          <Route path=":foodId" />
+          <Route path="new" element={<FoodForm currentUser={currentUser} />} />
+        </Route>
         <Route path="all" element={<FoodList currentUser={currentUser} />} />
         <Route
           path="pantry"
