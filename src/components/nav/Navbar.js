@@ -8,6 +8,21 @@ export const Navbar = ({ currentUser }) => {
   return (
     <ul className="navbar">
       <li className="navbar__item">
+        <Link className="navbar__link" to="/pantry">
+          Pantry
+        </Link>
+      </li>
+      <li className="navbar__item">
+        <Link className="navbar__link" to="/fridge">
+          Refrigerator
+        </Link>
+      </li>
+      <li className="navbar__item">
+        <Link className="navbar__link" to="/freezer">
+          Freezer
+        </Link>
+      </li>
+      <li className="navbar__item">
         <Link className="navbar__link" to="/all">
           View All
         </Link>
