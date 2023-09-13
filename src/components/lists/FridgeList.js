@@ -10,7 +10,7 @@ export const FridgeList = ({ currentUser }) => {
     getFridgeFood(currentUser).then((foodArray) => {
       setFoods(foodArray);
     });
-  }, []);
+  }, [currentUser]);
 
   return (
     <div className="foods-container">
