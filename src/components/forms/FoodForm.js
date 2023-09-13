@@ -6,7 +6,7 @@ import {
   getAllUnits,
 } from "../../services/formService";
 
-export const FoodForm = () => {
+export const FoodForm = ({ currentUser }) => {
   // ? Pulls today's date and formats it to YYYY-MM-DD
   const currentDate = new Date();
   const formatDate = (date) => {
@@ -21,7 +21,7 @@ export const FoodForm = () => {
   const [userValues, setUserValues] = useState({
     storageDate: today,
     storageId: 0,
-    userId: 1,
+    userId: currentUser.id,
   });
   const [types, setTypes] = useState([]);
   const [units, setUnits] = useState([]);
@@ -215,7 +215,7 @@ export const FoodForm = () => {
                         type="radio"
                         id="storage"
                         value={storageObj.id}
-                        checked={userValues.storageId == storageObj.id}
+                        checked={userValues.storageId === storageObj.id}
                         onChange={(event) => {
                           const copy = { ...userValues };
                           copy.storageId = parseInt(event.target.value);
