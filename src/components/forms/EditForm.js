@@ -11,7 +11,7 @@ import {
 export const EditForm = () => {
   const { foodId } = useParams();
 
-  const [userValues, setUserValues] = useState();
+  const [userValues, setUserValues] = useState({});
   const [types, setTypes] = useState([]);
   const [units, setUnits] = useState([]);
   const [storages, setStorages] = useState([]);
@@ -35,6 +35,29 @@ export const EditForm = () => {
     });
   }, [foodId]);
 
+  const handleEditFood = (event) => {
+    event.preventDefault();
+
+    if (
+      userValues.storageId &&
+      userValues.imageId &&
+      userValues.name &&
+      userValues.typeId &&
+      userValues.description &&
+      userValues.expirationDate &&
+      userValues.quantity &&
+      userValues.quantityUnitId
+    ) {
+      fetch(`http://localhost:8088/foods/${foodId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userValues),
+      }).then(() => {});
+    } else {
+      alert("Please finish filling out the form!");
+    }
+  };
+
   return (
     <div>
       <h1>Update Food</h1>
@@ -45,7 +68,7 @@ export const EditForm = () => {
               <div>Select Image:</div>
               <select
                 className="image-select-dropdown"
-                value={userValues?.imageId}
+                value={userValues.imageId}
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.imageId = parseInt(event.target.value);
@@ -76,7 +99,7 @@ export const EditForm = () => {
                 id="name"
                 type="text"
                 className="name-input"
-                value={userValues?.name}
+                value={userValues.name}
                 placeholder="Input food name..."
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -89,7 +112,7 @@ export const EditForm = () => {
               <label>Food Type: </label>
               <select
                 className="type-select"
-                value={userValues?.typeId}
+                value={userValues.typeId}
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.typeId = parseInt(event.target.value);
@@ -116,7 +139,7 @@ export const EditForm = () => {
               <label>Description: </label>
               <input
                 id="description"
-                value={userValues?.description}
+                value={userValues.description}
                 className="description-input"
                 placeholder="Input description (Optional)..."
                 onChange={(event) => {
@@ -132,7 +155,7 @@ export const EditForm = () => {
               <input
                 id="expirationDate"
                 type="date"
-                value={userValues?.expirationDate}
+                value={userValues.expirationDate}
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.expirationDate = event.target.value;
@@ -145,7 +168,7 @@ export const EditForm = () => {
                 id="quantity"
                 type="number"
                 placeholder="Input quantity..."
-                value={userValues?.quantity}
+                value={userValues.quantity}
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.quantity = parseInt(event.target.value);
@@ -156,7 +179,7 @@ export const EditForm = () => {
             <fieldset>
               <select
                 className="unit-select"
-                value={userValues?.quantityUnitId}
+                value={userValues.quantityUnitId}
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.quantityUnitId = parseInt(event.target.value);
@@ -187,7 +210,7 @@ export const EditForm = () => {
                       <input
                         type="radio"
                         id="storage"
-                        value={storageObj?.id}
+                        value={storageObj.id}
                         checked={userValues.storageId === storageObj.id}
                         onChange={(event) => {
                           const copy = { ...userValues };
@@ -201,8 +224,13 @@ export const EditForm = () => {
                 );
               })}
             </fieldset>
-            <button className="save-food-button" onClick={() => {}}>
-              Save Food
+            <button
+              className="save-food-button"
+              onClick={(event) => {
+                handleEditFood(event);
+              }}
+            >
+              Save Food Edit
             </button>
           </div>
         </div>
