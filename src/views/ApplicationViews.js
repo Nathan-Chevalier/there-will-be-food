@@ -8,6 +8,7 @@ import { FridgeList } from "../components/lists/FridgeList";
 import { FreezerList } from "../components/lists/FreezerList";
 import { FoodDetails } from "../components/food/FoodDetails";
 import { EditForm } from "../components/forms/EditForm";
+import { Landing } from "../components/food/Landing";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -30,6 +31,7 @@ export const ApplicationViews = () => {
           </>
         }
       >
+        <Route index element={<Landing />} />
         <Route path="food">
           <Route path=":foodId" element={<FoodDetails />} />
           <Route path="new" element={<FoodForm currentUser={currentUser} />} />

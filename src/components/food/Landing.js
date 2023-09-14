@@ -1,9 +1,6 @@
-import "./Navbar.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const Navbar = ({ currentUser }) => {
-  const navigate = useNavigate();
-
+export const Landing = () => {
   return (
     <ul className="navbar">
       <li className="navbar__item">
@@ -31,22 +28,6 @@ export const Navbar = ({ currentUser }) => {
           Add Food
         </Link>
       </li>
-      {localStorage.getItem("honey_user") ? (
-        <li className="navbar__item navbar-logout">
-          <Link
-            className="navbar__link"
-            to=""
-            onClick={() => {
-              localStorage.removeItem("honey_user");
-              navigate("/", { replace: true });
-            }}
-          >
-            Logout
-          </Link>
-        </li>
-      ) : (
-        ""
-      )}
     </ul>
   );
 };
