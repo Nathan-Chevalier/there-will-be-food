@@ -43,6 +43,7 @@ export const EditForm = () => {
 
     if (
       userValues.storageId &&
+      userValues.userId &&
       userValues.imageId &&
       userValues.name &&
       userValues.typeId &&

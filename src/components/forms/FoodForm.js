@@ -54,6 +54,7 @@ export const FoodForm = ({ currentUser }) => {
 
     if (
       userValues.storageId &&
+      userValues.userId &&
       userValues.imageId &&
       userValues.name &&
       userValues.typeId &&
