@@ -64,6 +64,16 @@ export const EditForm = () => {
     }
   };
 
+  const handleDeleteFood = (event) => {
+    event.preventDefault();
+    fetch(`http://localhost:8088/foods/${foodId}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    }).then(() => {
+      navigate(`/all`);
+    });
+  };
+
   return (
     <div>
       <h1>Update Food</h1>
@@ -237,6 +247,14 @@ export const EditForm = () => {
               }}
             >
               Save Food Edit
+            </button>
+            <button
+              onClick={(event) => {
+                handleDeleteFood(event);
+              }}
+              className="delete-food-button"
+            >
+              Delete
             </button>
           </div>
         </div>
