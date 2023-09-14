@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { createUser, getUserByEmail } from "../../services/userService";
-import { getAllImages } from "../../services/formService";
+import { getUserImages } from "../../services/formService";
 
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
     email: "",
     firstName: "",
-    imageId: "",
+    userImageId: "",
   });
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getAllImages().then((imageArray) => {
+    getUserImages().then((imageArray) => {
       setImages(imageArray);
     });
   }, []);
@@ -28,7 +28,7 @@ export const Register = (props) => {
           JSON.stringify({
             id: createdUser.id,
             firstName: createdUser.firstName,
-            imageId: createdUser.imageId,
+            userImageId: createdUser.userImageId,
           })
         );
 
@@ -92,7 +92,7 @@ export const Register = (props) => {
             className="type-select"
             onChange={(event) => {
               const copy = { ...customer };
-              copy.imageId = parseInt(event.target.value);
+              copy.userImageId = parseInt(event.target.value);
               setCustomer(copy);
             }}
           >

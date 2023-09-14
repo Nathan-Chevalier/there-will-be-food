@@ -19,7 +19,7 @@ export const Login = () => {
           JSON.stringify({
             id: user.id,
             firstName: user.firstName,
-            imageId: user.imageId,
+            userImageId: user.userImageId,
           })
         );
 
