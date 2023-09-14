@@ -43,7 +43,7 @@ export const ApplicationViews = () => {
           element={<PantryList currentUser={currentUser} />}
         />
         <Route
-          path="fridge"
+          path="refrigerator"
           element={<FridgeList currentUser={currentUser} />}
         />
         <Route

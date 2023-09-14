@@ -7,8 +7,11 @@ import {
   getAllTypes,
   getAllUnits,
 } from "../../services/formService";
+import { useNavigate } from "react-router-dom";
 
 export const EditForm = () => {
+  const navigate = useNavigate();
+
   const { foodId } = useParams();
 
   const [userValues, setUserValues] = useState({});
@@ -40,6 +43,7 @@ export const EditForm = () => {
 
     if (
       userValues.storageId &&
+      userValues.userId &&
       userValues.imageId &&
       userValues.name &&
       userValues.typeId &&
@@ -52,7 +56,9 @@ export const EditForm = () => {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userValues),
-      }).then(() => {});
+      }).then(() => {
+        navigate(`/food/${foodId}`);
+      });
     } else {
       alert("Please finish filling out the form!");
     }

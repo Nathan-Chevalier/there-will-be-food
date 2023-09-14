@@ -5,8 +5,10 @@ import {
   getAllTypes,
   getAllUnits,
 } from "../../services/formService";
+import { useNavigate } from "react-router-dom";
 
 export const FoodForm = ({ currentUser }) => {
+  const navigate = useNavigate();
   // ? Pulls today's date and formats it to YYYY-MM-DD
   const currentDate = new Date();
   const formatDate = (date) => {
@@ -45,10 +47,14 @@ export const FoodForm = ({ currentUser }) => {
   }, []);
 
   const handleSaveFood = (event) => {
+    const findStorage = storages.find(
+      (storage) => userValues.storageId === storage.id
+    );
     event.preventDefault();
 
     if (
       userValues.storageId &&
+      userValues.userId &&
       userValues.imageId &&
       userValues.name &&
       userValues.typeId &&
@@ -61,7 +67,9 @@ export const FoodForm = ({ currentUser }) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userValues),
-      }).then(() => {});
+      }).then(() => {
+        navigate(`/${findStorage.name}`);
+      });
     } else {
       alert("Please finish filling out the form!");
     }
