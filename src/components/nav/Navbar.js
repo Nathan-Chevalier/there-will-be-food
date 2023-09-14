@@ -12,7 +12,7 @@ export const Navbar = ({ currentUser }) => {
         </Link>
       </li>
       <li className="navbar__item">
-        <Link className="navbar__link" to="/fridge">
+        <Link className="navbar__link" to="/refrigerator">
           Refrigerator
         </Link>
       </li>
