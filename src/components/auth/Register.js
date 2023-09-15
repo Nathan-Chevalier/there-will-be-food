@@ -86,30 +86,28 @@ export const Register = (props) => {
             />
           </div>
         </fieldset>
-        <fieldset>
-          <label>User Image: </label>
-          <select
-            className="type-select"
-            onChange={(event) => {
-              const copy = { ...customer };
-              copy.userImageId = parseInt(event.target.value);
-              setCustomer(copy);
-            }}
-          >
-            <option value={0}>Select image...</option>
-            {images.map((imageObj) => {
-              return (
-                <option
-                  style={{ backgroundImage: `${imageObj.address}` }}
-                  key={imageObj.id}
-                  value={imageObj.id}
-                  className="image-select-option"
-                >
-                  {imageObj.name}
-                </option>
-              );
-            })}
-          </select>
+        <fieldset className="image-select">
+          {images.map((imageObj) => {
+            return (
+              <label key={imageObj.id}>
+                <div className="image-radio">
+                  <input
+                    type="radio"
+                    id="image"
+                    name={imageObj.name}
+                    value={imageObj.id}
+                    checked={customer.userImageId === imageObj.id}
+                    onChange={(event) => {
+                      const copy = { ...customer };
+                      copy.userImageId = parseInt(event.target.value);
+                      setCustomer(copy);
+                    }}
+                  />
+                </div>
+                <img src={imageObj.address} alt={imageObj.name} />
+              </label>
+            );
+          })}
         </fieldset>
         <fieldset>
           <div className="form-group">
