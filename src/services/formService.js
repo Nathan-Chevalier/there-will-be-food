@@ -13,3 +13,7 @@ export const getAllStorages = () => {
 export const getAllImages = () => {
   return fetch("http://localhost:8088/images").then((res) => res.json());
 };
+
+export const getUserImages = () => {
+  return fetch("http://localhost:8088/userImages").then((res) => res.json());
+};

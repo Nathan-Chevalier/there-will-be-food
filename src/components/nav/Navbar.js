@@ -31,6 +31,7 @@ export const Navbar = ({ currentUser }) => {
           Add Food
         </Link>
       </li>
+      <li>{currentUser.firstName}</li>
       {localStorage.getItem("honey_user") ? (
         <li className="navbar__item navbar-logout">
           <Link
