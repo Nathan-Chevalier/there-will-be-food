@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getAllFood } from "../../services/foodService";
-import "./food.css";
 import { FoodListItem } from "../food/FoodListItem";
 
 export const FoodList = ({ currentUser }) => {
@@ -34,7 +33,7 @@ export const FoodList = ({ currentUser }) => {
           className="Food Search"
         />
       </div>
-      <div className="food-cards-small">
+      <div className="flex-row">
         {filteredFoods.map((food) => {
           return <FoodListItem food={food} />;
         })}

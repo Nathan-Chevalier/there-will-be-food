@@ -8,6 +8,7 @@ export const FoodListItem = ({ food }) => {
       <div className="food-image">{food.image.name}</div>
       <div className="food-details-small-a">
         <h3
+          className="text-2xl text-red-600"
           onClick={() => {
             navigate(`/food/${food.id}`);
           }}
