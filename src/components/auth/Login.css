@@ -77,3 +77,11 @@ fieldset {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
+.image-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+}
