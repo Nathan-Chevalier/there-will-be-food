@@ -100,6 +100,7 @@ export const Register = (props) => {
             {images.map((imageObj) => {
               return (
                 <option
+                  style={{ backgroundImage: `${imageObj.address}` }}
                   key={imageObj.id}
                   value={imageObj.id}
                   className="image-select-option"
