@@ -41,21 +41,34 @@ export const EditForm = () => {
   const handleEditFood = (event) => {
     event.preventDefault();
 
+    const finalValues = {
+      userId: userValues.userId,
+      storageId: userValues.storageId,
+      name: userValues.name,
+      description: userValues.description,
+      storageDate: userValues.storageDate,
+      expirationDate: userValues.expirationDate,
+      imageId: userValues.imageId,
+      typeId: userValues.typeId,
+      quantity: userValues.quantity,
+      quantityUnitId: userValues.quantityUnitId,
+    };
+
     if (
-      userValues.storageId &&
-      userValues.userId &&
-      userValues.imageId &&
-      userValues.name &&
-      userValues.typeId &&
-      userValues.description &&
-      userValues.expirationDate &&
-      userValues.quantity &&
-      userValues.quantityUnitId
+      finalValues.storageId &&
+      finalValues.userId &&
+      finalValues.imageId &&
+      finalValues.name &&
+      finalValues.typeId &&
+      finalValues.description &&
+      finalValues.expirationDate &&
+      finalValues.quantity &&
+      finalValues.quantityUnitId
     ) {
       fetch(`http://localhost:8088/foods/${foodId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userValues),
+        body: JSON.stringify(finalValues),
       }).then(() => {
         navigate(`/food/${foodId}`);
       });
