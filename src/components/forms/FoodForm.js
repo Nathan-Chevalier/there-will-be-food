@@ -4,7 +4,6 @@ import {
   getAllStorages,
   getAllTypes,
   getAllUnits,
-  getUserImages,
 } from "../../services/formService";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +41,7 @@ export const FoodForm = ({ currentUser }) => {
     getAllStorages().then((storageArray) => {
       setStorages(storageArray);
     });
-    getUserImages().then((imageArray) => {
+    getAllImages().then((imageArray) => {
       setImages(imageArray);
     });
   }, []);
