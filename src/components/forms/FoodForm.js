@@ -80,31 +80,28 @@ export const FoodForm = ({ currentUser }) => {
       <h1>ADD FOOD</h1>
       <form>
         <div className="image-sector">
-          <fieldset>
-            <div className="image-select">
-              <div>Select Image:</div>
-              <select
-                className="image-select-dropdown"
-                onChange={(event) => {
-                  const copy = { ...userValues };
-                  copy.imageId = parseInt(event.target.value);
-                  setUserValues(copy);
-                }}
-              >
-                <option value={0}>IMAGE SELECT IMAGE</option>
-                {images.map((imageObj) => {
-                  return (
-                    <option
-                      key={imageObj.id}
+          <fieldset className="image-select">
+            {images.map((imageObj) => {
+              return (
+                <label key={imageObj.id}>
+                  <div className="image-radio">
+                    <input
+                      type="radio"
+                      id="image"
+                      name={imageObj.name}
                       value={imageObj.id}
-                      className="image-select-option"
-                    >
-                      {imageObj.name}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+                      checked={userValues.imageId === imageObj.id}
+                      onChange={(event) => {
+                        const copy = { ...userValues };
+                        copy.imageId = parseInt(event.target.value);
+                        setUserValues(copy);
+                      }}
+                    />
+                  </div>
+                  <img src={imageObj.address} alt={imageObj.name} />
+                </label>
+              );
+            })}
           </fieldset>
         </div>
         <div className="data-sector">
@@ -114,7 +111,7 @@ export const FoodForm = ({ currentUser }) => {
               <input
                 id="name"
                 type="text"
-                className="name-input"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 placeholder="Input food name..."
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -153,7 +150,7 @@ export const FoodForm = ({ currentUser }) => {
               <label>Description: </label>
               <input
                 id="description"
-                className="description-input"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 placeholder="Input description (Optional)..."
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -181,6 +178,7 @@ export const FoodForm = ({ currentUser }) => {
                 id="quantity"
                 type="number"
                 placeholder="Input quantity..."
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 value={userValues.quantity}
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -237,7 +235,7 @@ export const FoodForm = ({ currentUser }) => {
               })}
             </fieldset>
             <button
-              className="save-food-button"
+              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
               onClick={(event) => {
                 handleSaveFood(event);
               }}

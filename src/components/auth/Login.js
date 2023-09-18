@@ -42,7 +42,7 @@ export const Login = () => {
                 type="email"
                 value={email}
                 onChange={(evt) => set(evt.target.value)}
-                className="form-control"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 placeholder="Email address"
                 required
                 autoFocus
@@ -51,7 +51,10 @@ export const Login = () => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
+              <button
+                className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
+                type="submit"
+              >
                 Sign in
               </button>
             </div>
