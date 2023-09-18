@@ -127,7 +127,7 @@ export const EditForm = () => {
               <input
                 id="name"
                 type="text"
-                className="name-input"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 value={userValues.name}
                 placeholder="Input food name..."
                 onChange={(event) => {
@@ -169,7 +169,7 @@ export const EditForm = () => {
               <input
                 id="description"
                 value={userValues.description}
-                className="description-input"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 placeholder="Input description (Optional)..."
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -197,6 +197,7 @@ export const EditForm = () => {
                 id="quantity"
                 type="number"
                 placeholder="Input quantity..."
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 value={userValues.quantity}
                 onChange={(event) => {
                   const copy = { ...userValues };
