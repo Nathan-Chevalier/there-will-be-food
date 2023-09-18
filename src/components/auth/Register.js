@@ -67,7 +67,7 @@ export const Register = (props) => {
               onChange={updateCustomer}
               type="text"
               id="firstName"
-              className="form-control"
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               placeholder="Enter your first name"
               required
               autoFocus
@@ -80,7 +80,7 @@ export const Register = (props) => {
               onChange={updateCustomer}
               type="email"
               id="email"
-              className="form-control"
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               placeholder="Email address"
               required
             />

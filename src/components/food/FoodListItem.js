@@ -4,7 +4,7 @@ export const FoodListItem = ({ food }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="container w-3/12 flex-1">
+    <div className="container w-3/12 flex-1 bg-red-300 text-black">
       <div className="food-image">{food.image.name}</div>
       <div className="food-details-small-a">
         <h3
