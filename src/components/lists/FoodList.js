@@ -33,7 +33,7 @@ export const FoodList = ({ currentUser }) => {
           className="Food Search"
         />
       </div>
-      <div className="flex-row">
+      <div className="flex-row flex-wrap justify-between items-start">
         {filteredFoods.map((food) => {
           return <FoodListItem food={food} />;
         })}

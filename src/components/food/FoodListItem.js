@@ -4,11 +4,11 @@ export const FoodListItem = ({ food }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="food-card">
+    <div className="container w-3/12 flex-1">
       <div className="food-image">{food.image.name}</div>
       <div className="food-details-small-a">
         <h3
-          className="text-2xl text-red-600"
+          className="text-5xl text-yellow-400 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]"
           onClick={() => {
             navigate(`/food/${food.id}`);
           }}

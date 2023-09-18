@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getPantryFood } from "../../services/foodService";
-import "./food.css";
 import { FoodListItem } from "../food/FoodListItem";
 
 export const PantryList = ({ currentUser }) => {
