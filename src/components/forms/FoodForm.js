@@ -4,6 +4,7 @@ import {
   getAllStorages,
   getAllTypes,
   getAllUnits,
+  getUserImages,
 } from "../../services/formService";
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +42,7 @@ export const FoodForm = ({ currentUser }) => {
     getAllStorages().then((storageArray) => {
       setStorages(storageArray);
     });
-    getAllImages().then((imageArray) => {
+    getUserImages().then((imageArray) => {
       setImages(imageArray);
     });
   }, []);
@@ -80,31 +81,28 @@ export const FoodForm = ({ currentUser }) => {
       <h1>ADD FOOD</h1>
       <form>
         <div className="image-sector">
-          <fieldset>
-            <div className="image-select">
-              <div>Select Image:</div>
-              <select
-                className="image-select-dropdown"
-                onChange={(event) => {
-                  const copy = { ...userValues };
-                  copy.imageId = parseInt(event.target.value);
-                  setUserValues(copy);
-                }}
-              >
-                <option value={0}>IMAGE SELECT IMAGE</option>
-                {images.map((imageObj) => {
-                  return (
-                    <option
-                      key={imageObj.id}
+          <fieldset className="image-select">
+            {images.map((imageObj) => {
+              return (
+                <label key={imageObj.id}>
+                  <div className="image-radio">
+                    <input
+                      type="radio"
+                      id="image"
+                      name={imageObj.name}
                       value={imageObj.id}
-                      className="image-select-option"
-                    >
-                      {imageObj.name}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+                      checked={userValues.imageId === imageObj.id}
+                      onChange={(event) => {
+                        const copy = { ...userValues };
+                        copy.imageId = parseInt(event.target.value);
+                        setUserValues(copy);
+                      }}
+                    />
+                  </div>
+                  <img src={imageObj.address} alt={imageObj.name} />
+                </label>
+              );
+            })}
           </fieldset>
         </div>
         <div className="data-sector">

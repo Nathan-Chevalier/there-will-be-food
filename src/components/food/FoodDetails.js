@@ -40,7 +40,7 @@ export const FoodDetails = () => {
           {food.quantity} {food.quantityUnit?.name}
         </div>
         <button
-          className="delete-button"
+          className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-900 hover:border-red-500 rounded"
           onClick={() => {
             handleDeleteFood();
           }}
@@ -48,6 +48,7 @@ export const FoodDetails = () => {
           Delete
         </button>
         <button
+          className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
           onClick={() => {
             navigate(`/food/${foodId}/edit`);
           }}
