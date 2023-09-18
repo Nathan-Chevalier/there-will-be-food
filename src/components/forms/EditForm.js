@@ -254,7 +254,7 @@ export const EditForm = () => {
               })}
             </fieldset>
             <button
-              className="save-food-button"
+              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
               onClick={(event) => {
                 handleEditFood(event);
               }}
@@ -265,7 +265,7 @@ export const EditForm = () => {
               onClick={(event) => {
                 handleDeleteFood(event);
               }}
-              className="delete-food-button"
+              className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-900 hover:border-red-500 rounded"
             >
               Delete
             </button>
