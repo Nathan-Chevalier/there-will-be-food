@@ -4,7 +4,7 @@ export const FoodListItem = ({ food }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-column w-3/12 basis-[32%] p-[10px] bg-red-300 text-black justify-between">
+    <div className="flex flex-column w-3/12 basis-[32%] p-[10px] bg-gradient-to-t from-[#6d6559] to-[#574e3f] text-black justify-between">
       <div className="flex items-center">
         <img
           className="aspect-square w-full min-w-full"
@@ -21,15 +21,33 @@ export const FoodListItem = ({ food }) => {
         >
           {food.name}
         </h3>
-        <div className="flex flex-col flex-wrap pl-4 items-start justify-end">
-          <div className="">Stored on: {food.storageDate}</div>
-          <div className="">Expires on: {food.expirationDate}</div>
+        <div className="flex flex-col flex-wrap ml-4 p-1 rounded-2xl items-start justify-center bg-slate-950/[.075]">
+          <div className="">
+            <span className="text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              Stored on:
+            </span>{" "}
+            {food.storageDate}
+          </div>
+          <div className="">
+            <span className="text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              Expires on:
+            </span>{" "}
+            {food.expirationDate}
+          </div>
         </div>
       </div>
       <div className="flex-initial flex flex-col justify-between">
         <div className="flex flex-col justify-items-end items-end">
-          <div className="bg-green-600">{food.type.name}</div>
-          <div className="food-storage-small">{food.storage.name}</div>
+          <div className="bg-green-600 py-0.5 px-2 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg">
+            <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              {food.type.name}
+            </span>
+          </div>
+          <div className="bg-green-600 py-0.5 px-2 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg my-2">
+            <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              {food.storage.name}
+            </span>
+          </div>
         </div>
         <div className="flex flex-col items-end">
           {food.quantity} {food.quantityUnit.name}
