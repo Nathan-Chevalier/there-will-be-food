@@ -26,19 +26,23 @@ export const FoodListItem = ({ food }) => {
             <span className="text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
               Stored on:
             </span>{" "}
-            {food.storageDate}
+            <span className="text-amber-100 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              {food.storageDate}
+            </span>
           </div>
           <div className="">
-            <span className="text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+            <span className="text-white drop-shadow-[1px_1px_0px_rgba(0,0,0,0.9)]">
               Expires on:
             </span>{" "}
-            {food.expirationDate}
+            <span className="text-amber-100 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+              {food.expirationDate}
+            </span>
           </div>
         </div>
       </div>
       <div className="flex-initial flex flex-col justify-between">
         <div className="flex flex-col justify-items-end items-end">
-          <div className="bg-green-600 py-0.5 px-2 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg">
+          <div className="bg-green-600 py-0.5 px-2 text-amber-100 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg">
             <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
               {food.type.name}
             </span>

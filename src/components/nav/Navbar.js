@@ -2,6 +2,9 @@ import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getUserImages } from "../../services/formService";
+import pantryButton from "../../assets/images/pantryButton.png";
+import freezerButton from "../../assets/images/freezerButton.png";
+import refrigeratorButton from "../../assets/images/refrigeratorButton.png";
 
 export const Navbar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -23,17 +26,17 @@ export const Navbar = ({ currentUser }) => {
     <ul className="navbar">
       <li className="navbar__item">
         <Link className="navbar__link" to="/pantry">
-          Pantry
+          <img src={pantryButton} alt="Pantry" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/refrigerator">
-          Refrigerator
+          <img src={refrigeratorButton} alt="Refrigerator" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/freezer">
-          Freezer
+          <img src={freezerButton} alt="Pantry" />
         </Link>
       </li>
       <li className="navbar__item">
