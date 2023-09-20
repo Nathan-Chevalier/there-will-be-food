@@ -76,37 +76,16 @@ export const FoodForm = ({ currentUser }) => {
   };
 
   return (
-    <div>
-      <h1>ADD FOOD</h1>
-      <form>
-        <div className="image-sector">
-          <fieldset className="image-select">
-            {images.map((imageObj) => {
-              return (
-                <label key={imageObj.id}>
-                  <div className="image-radio">
-                    <input
-                      type="radio"
-                      id="image"
-                      name={imageObj.name}
-                      value={imageObj.id}
-                      checked={userValues.imageId === imageObj.id}
-                      onChange={(event) => {
-                        const copy = { ...userValues };
-                        copy.imageId = parseInt(event.target.value);
-                        setUserValues(copy);
-                      }}
-                    />
-                  </div>
-                  <img src={imageObj.address} alt={imageObj.name} />
-                </label>
-              );
-            })}
-          </fieldset>
+    <div className="flex justify-center">
+      <form className="flex flex-col bg-amber-600 w-5/12 gap-y-7">
+        <div className="flex justify-center">
+          <h1>ADD FOOD</h1>
         </div>
-        <div className="data-sector">
-          <div className="name-type-row">
-            <fieldset>
+        {/* Data container */}
+        <div className="flex flex-col gap-4">
+          {/* Name & Type Container */}
+          <div className="name-type-container flex justify-between">
+            <fieldset className="name-container flex flex-col pl-12">
               <label>Food Name: </label>
               <input
                 id="name"
@@ -120,7 +99,7 @@ export const FoodForm = ({ currentUser }) => {
                 }}
               />
             </fieldset>
-            <fieldset>
+            <fieldset className="type-container flex flex-col">
               <label>Food Type: </label>
               <select
                 className="type-select"
@@ -145,12 +124,12 @@ export const FoodForm = ({ currentUser }) => {
               </select>
             </fieldset>
           </div>
-          <div className="description-row">
-            <fieldset>
+          <div className="description-container flex justify-start">
+            <fieldset className="flex flex-col pl-12 grow pr-12">
               <label>Description: </label>
               <input
                 id="description"
-                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 placeholder="Input description (Optional)..."
                 onChange={(event) => {
                   const copy = { ...userValues };
@@ -160,62 +139,71 @@ export const FoodForm = ({ currentUser }) => {
               />
             </fieldset>
           </div>
-          <div className="expiration-quantity-row">
-            <fieldset>
-              <input
-                id="expirationDate"
-                type="date"
-                value={userValues.expirationDate}
-                onChange={(event) => {
-                  const copy = { ...userValues };
-                  copy.expirationDate = event.target.value;
-                  setUserValues(copy);
-                }}
-              />
-            </fieldset>
-            <fieldset>
-              <input
-                id="quantity"
-                type="number"
-                placeholder="Input quantity..."
-                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                value={userValues.quantity}
-                onChange={(event) => {
-                  const copy = { ...userValues };
-                  copy.quantity = parseInt(event.target.value);
-                  setUserValues(copy);
-                }}
-              />
-            </fieldset>
-            <fieldset>
-              <select
-                className="unit-select"
-                onChange={(event) => {
-                  const copy = { ...userValues };
-                  copy.quantityUnitId = parseInt(event.target.value);
-                  setUserValues(copy);
-                }}
-              >
-                <option value={0}>Select Units...</option>
-                {units.map((unitObj) => {
-                  return (
-                    <option
-                      key={unitObj.id}
-                      value={unitObj.id}
-                      className="unit-select-option"
-                    >
-                      {unitObj.name}
-                    </option>
-                  );
-                })}
-              </select>
-            </fieldset>
+          <div className="expiration-quantity-container flex flex-row justify-between">
+            <div className="flex flex-col pl-12">
+              <label>Expiration Date:</label>
+              <fieldset>
+                <input
+                  id="expirationDate"
+                  type="date"
+                  value={userValues.expirationDate}
+                  onChange={(event) => {
+                    const copy = { ...userValues };
+                    copy.expirationDate = event.target.value;
+                    setUserValues(copy);
+                  }}
+                />
+              </fieldset>
+            </div>
+
+            <div className="quantity-container flex flex-col">
+              <label>Quantity:</label>
+              <div className="flex flex-row ">
+                <fieldset>
+                  <input
+                    id="quantity"
+                    type="number"
+                    placeholder="Input quantity..."
+                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    value={userValues.quantity}
+                    onChange={(event) => {
+                      const copy = { ...userValues };
+                      copy.quantity = parseInt(event.target.value);
+                      setUserValues(copy);
+                    }}
+                  />
+                </fieldset>
+                <fieldset>
+                  <select
+                    className="unit-select"
+                    onChange={(event) => {
+                      const copy = { ...userValues };
+                      copy.quantityUnitId = parseInt(event.target.value);
+                      setUserValues(copy);
+                    }}
+                  >
+                    <option value={0}>Select Units...</option>
+                    {units.map((unitObj) => {
+                      return (
+                        <option
+                          key={unitObj.id}
+                          value={unitObj.id}
+                          className="unit-select-option"
+                        >
+                          {unitObj.name}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </fieldset>
+              </div>
+            </div>
           </div>
           <div className="storage-submit-row">
-            <fieldset>
+            <fieldset className="flex flex-row justify-around content-center">
               {storages.map((storageObj) => {
                 return (
-                  <label key={storageObj.id}>
+                  <label className="flex flex-row" key={storageObj.id}>
                     <div className="storage-radio">
                       <input
                         type="radio"
@@ -234,15 +222,44 @@ export const FoodForm = ({ currentUser }) => {
                 );
               })}
             </fieldset>
-            <button
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
-              onClick={(event) => {
-                handleSaveFood(event);
-              }}
-            >
-              Save Food
-            </button>
           </div>
+        </div>
+        <div>
+          <div className="image-container flex flex-row flex-wrap justify-around">
+            <fieldset className="image-select gap-2">
+              {images.map((imageObj) => {
+                return (
+                  <label key={imageObj.id}>
+                    <img
+                      src={imageObj.address}
+                      alt={imageObj.name}
+                      className={
+                        userValues.imageId === imageObj.id
+                          ? // ? Selected Image style ternary
+                            "border-green-300 border-4 rounded-2xl hover:cursor-pointer"
+                          : "hover:cursor-pointer opacity-60"
+                      }
+                      onClick={() => {
+                        const copy = { ...userValues };
+                        copy.imageId = imageObj.id;
+                        setUserValues(copy);
+                      }}
+                    />
+                  </label>
+                );
+              })}
+            </fieldset>
+          </div>
+        </div>
+        <div className="button-container flex justify-center">
+          <button
+            className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
+            onClick={(event) => {
+              handleSaveFood(event);
+            }}
+          >
+            Save Food
+          </button>
         </div>
       </form>
     </div>
