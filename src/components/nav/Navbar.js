@@ -5,6 +5,7 @@ import { getUserImages } from "../../services/formService";
 import pantryButton from "../../assets/images/pantryButton.png";
 import freezerButton from "../../assets/images/freezerButton.png";
 import refrigeratorButton from "../../assets/images/refrigeratorButton.png";
+import allButton from "../../assets/images/allButton.png";
 
 export const Navbar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -26,22 +27,22 @@ export const Navbar = ({ currentUser }) => {
     <ul className="navbar">
       <li className="navbar__item">
         <Link className="navbar__link" to="/pantry">
-          <img src={pantryButton} alt="Pantry" />
+          <img src={pantryButton} alt="View Pantry" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/refrigerator">
-          <img src={refrigeratorButton} alt="Refrigerator" />
+          <img src={refrigeratorButton} alt="View Refrigerator" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/freezer">
-          <img src={freezerButton} alt="Pantry" />
+          <img src={freezerButton} alt="View Freezer" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/all">
-          View All
+          <img src={allButton} alt="View All" />
         </Link>
       </li>
       <li className="navbar__item">
