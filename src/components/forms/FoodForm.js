@@ -79,7 +79,9 @@ export const FoodForm = ({ currentUser }) => {
     <div className="flex justify-center bg-[#a4bdba]">
       <form className="flex flex-col bg-[#a47f74] w-5/12 gap-y-2 p-6 m-5">
         <div className="flex justify-center">
-          <h1>ADD FOOD</h1>
+          <div className="font-helvetica text-5xl font-bold text-white">
+            <span className="border-2">Add food</span>
+          </div>
         </div>
         {/* Data container */}
         <div className="flex flex-col gap-2">
