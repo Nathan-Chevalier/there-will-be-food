@@ -76,11 +76,11 @@ export const FoodForm = ({ currentUser }) => {
   };
 
   return (
-    <div className="flex justify-center bg-[#a4bdba]">
+    <div className="flex justify-center bg-[#a4bdba] font-helvetica ">
       <form className="flex flex-col bg-[#a47f74] w-5/12 gap-y-2 p-6 m-5">
         <div className="flex justify-center">
-          <div className="font-helvetica text-5xl font-bold text-white">
-            <span className="border-2">Add food</span>
+          <div className="text-5xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+            Add Food
           </div>
         </div>
         {/* Data container */}
@@ -88,7 +88,9 @@ export const FoodForm = ({ currentUser }) => {
           {/* Name & Type Container */}
           <div className="name-type-container flex justify-between bg-slate-950/10 rounded-xl p-2">
             <fieldset className="name-container flex flex-col">
-              <label>Food Name: </label>
+              <label className="text-lg text-white drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+                Food Name:{" "}
+              </label>
               <input
                 id="name"
                 type="text"
@@ -104,7 +106,7 @@ export const FoodForm = ({ currentUser }) => {
             <fieldset className="type-container flex flex-col">
               <label>Food Type: </label>
               <select
-                className="type-select"
+                className="type-select  bg-gray-200 border-2 border-gray-200 rounded py-2 px-4"
                 onChange={(event) => {
                   const copy = { ...userValues };
                   copy.typeId = parseInt(event.target.value);
@@ -148,6 +150,7 @@ export const FoodForm = ({ currentUser }) => {
                 <input
                   id="expirationDate"
                   type="date"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-1 px-4"
                   value={userValues.expirationDate}
                   onChange={(event) => {
                     const copy = { ...userValues };
@@ -160,7 +163,7 @@ export const FoodForm = ({ currentUser }) => {
 
             <div className="quantity-container flex flex-col">
               <label>Quantity:</label>
-              <div className="flex flex-row">
+              <div className="flex flex-row content-center justify-center gap-x-2">
                 <fieldset>
                   <input
                     id="quantity"
@@ -175,9 +178,9 @@ export const FoodForm = ({ currentUser }) => {
                     }}
                   />
                 </fieldset>
-                <fieldset>
+                <fieldset className="flex flex-col content-center justify-center ">
                   <select
-                    className="unit-select"
+                    className="unit-select bg-gray-200 border-2 border-gray-200 rounded py-2 px-4"
                     onChange={(event) => {
                       const copy = { ...userValues };
                       copy.quantityUnitId = parseInt(event.target.value);
