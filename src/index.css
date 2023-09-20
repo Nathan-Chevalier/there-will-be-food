@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .shadow-text {
+    @apply text-white drop-shadow-[0_2px_2px_rgba(0,0,0,1)];
+  }
+}
