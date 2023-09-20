@@ -86,11 +86,9 @@ export const FoodForm = ({ currentUser }) => {
         {/* Data container */}
         <div className="flex flex-col gap-2">
           {/* Name & Type Container */}
-          <div className="name-type-container flex justify-between bg-slate-950/10 rounded-xl p-2">
+          <div className="name-type-container flex justify-between bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <fieldset className="name-container flex flex-col">
-              <label className="text-lg text-white drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-                Food Name:{" "}
-              </label>
+              <label className="text-lg shadow-text">Food Name: </label>
               <input
                 id="name"
                 type="text"
@@ -104,7 +102,7 @@ export const FoodForm = ({ currentUser }) => {
               />
             </fieldset>
             <fieldset className="type-container flex flex-col">
-              <label>Food Type: </label>
+              <label className="shadow-text">Food Type: </label>
               <select
                 className="type-select  bg-gray-200 border-2 border-gray-200 rounded py-2 px-4"
                 onChange={(event) => {
@@ -128,9 +126,9 @@ export const FoodForm = ({ currentUser }) => {
               </select>
             </fieldset>
           </div>
-          <div className="description-container flex justify-start bg-slate-950/10 rounded-xl p-2">
+          <div className="description-container flex justify-start bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <fieldset className="flex flex-col grow">
-              <label>Description: </label>
+              <label className="shadow-text mb-1">Description: </label>
               <input
                 id="description"
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
@@ -144,8 +142,8 @@ export const FoodForm = ({ currentUser }) => {
             </fieldset>
           </div>
           <div className="expiration-quantity-container flex flex-row justify-between bg-slate-950/10 rounded-xl p-2">
-            <div className="flex flex-col justify-self-start grow">
-              <label>Expiration Date:</label>
+            <div className="flex flex-col align-center justify-center  bg-slate-950/10 px-3 py-1 rounded-lg pb-3 border-slate-950/20 border-2">
+              <label className="shadow-text">Expiration Date:</label>
               <fieldset>
                 <input
                   id="expirationDate"
@@ -161,8 +159,8 @@ export const FoodForm = ({ currentUser }) => {
               </fieldset>
             </div>
 
-            <div className="quantity-container flex flex-col">
-              <label>Quantity:</label>
+            <div className="quantity-container flex flex-col bg-slate-950/10 px-3 py-1 rounded-lg pb-3 border-slate-950/20 border-2">
+              <label className="shadow-text">Quantity:</label>
               <div className="flex flex-row content-center justify-center gap-x-2">
                 <fieldset>
                   <input
@@ -180,7 +178,7 @@ export const FoodForm = ({ currentUser }) => {
                 </fieldset>
                 <fieldset className="flex flex-col content-center justify-center ">
                   <select
-                    className="unit-select bg-gray-200 border-2 border-gray-200 rounded py-2 px-4"
+                    className="unit-select bg-gray-200 border-2 border-gray-200 rounded pb-2 py-2 px-4"
                     onChange={(event) => {
                       const copy = { ...userValues };
                       copy.quantityUnitId = parseInt(event.target.value);
@@ -204,16 +202,20 @@ export const FoodForm = ({ currentUser }) => {
               </div>
             </div>
           </div>
-          <div className="storage-submit-row flex flex-col bg-slate-950/10 rounded-xl p-2">
-            <div className="self-center">Select Storage:</div>
+          <div className="storage-submit-row flex flex-col bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
+            <div className="self-center shadow-text">Select Storage:</div>
             <fieldset className="flex flex-row justify-around content-center">
               {storages.map((storageObj) => {
                 return (
-                  <label className="flex flex-row" key={storageObj.id}>
+                  <label
+                    className="flex flex-row bg-gray-200 rounded pb-2 py-2 px-4 gap-3"
+                    key={storageObj.id}
+                  >
                     <div className="storage-radio">
                       <input
                         type="radio"
                         id="storage"
+                        className="checked:bg-red-800"
                         value={storageObj.id}
                         checked={userValues.storageId === storageObj.id}
                         onChange={(event) => {
@@ -231,7 +233,7 @@ export const FoodForm = ({ currentUser }) => {
           </div>
         </div>
         <div>
-          <div className="image-container flex flex-row flex-wrap justify-around bg-slate-950/10 rounded-xl p-2">
+          <div className="image-container flex flex-row flex-wrap justify-around bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <fieldset className="image-select gap-2">
               {images.map((imageObj) => {
                 return (
@@ -257,7 +259,7 @@ export const FoodForm = ({ currentUser }) => {
             </fieldset>
           </div>
         </div>
-        <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2">
+        <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
           <button
             className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
             onClick={(event) => {
