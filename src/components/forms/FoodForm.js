@@ -76,16 +76,16 @@ export const FoodForm = ({ currentUser }) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <form className="flex flex-col bg-amber-600 w-5/12 gap-y-7">
+    <div className="flex justify-center bg-[#a4bdba]">
+      <form className="flex flex-col bg-[#a47f74] w-5/12 gap-y-2 p-6 m-5">
         <div className="flex justify-center">
           <h1>ADD FOOD</h1>
         </div>
         {/* Data container */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           {/* Name & Type Container */}
-          <div className="name-type-container flex justify-between">
-            <fieldset className="name-container flex flex-col pl-12">
+          <div className="name-type-container flex justify-between bg-slate-950/10 rounded-xl p-2">
+            <fieldset className="name-container flex flex-col">
               <label>Food Name: </label>
               <input
                 id="name"
@@ -124,8 +124,8 @@ export const FoodForm = ({ currentUser }) => {
               </select>
             </fieldset>
           </div>
-          <div className="description-container flex justify-start">
-            <fieldset className="flex flex-col pl-12 grow pr-12">
+          <div className="description-container flex justify-start bg-slate-950/10 rounded-xl p-2">
+            <fieldset className="flex flex-col grow">
               <label>Description: </label>
               <input
                 id="description"
@@ -139,8 +139,8 @@ export const FoodForm = ({ currentUser }) => {
               />
             </fieldset>
           </div>
-          <div className="expiration-quantity-container flex flex-row justify-between">
-            <div className="flex flex-col pl-12">
+          <div className="expiration-quantity-container flex flex-row justify-between bg-slate-950/10 rounded-xl p-2">
+            <div className="flex flex-col justify-self-start grow">
               <label>Expiration Date:</label>
               <fieldset>
                 <input
@@ -158,7 +158,7 @@ export const FoodForm = ({ currentUser }) => {
 
             <div className="quantity-container flex flex-col">
               <label>Quantity:</label>
-              <div className="flex flex-row ">
+              <div className="flex flex-row">
                 <fieldset>
                   <input
                     id="quantity"
@@ -199,7 +199,8 @@ export const FoodForm = ({ currentUser }) => {
               </div>
             </div>
           </div>
-          <div className="storage-submit-row">
+          <div className="storage-submit-row flex flex-col bg-slate-950/10 rounded-xl p-2">
+            <div className="self-center">Select Storage:</div>
             <fieldset className="flex flex-row justify-around content-center">
               {storages.map((storageObj) => {
                 return (
@@ -225,7 +226,7 @@ export const FoodForm = ({ currentUser }) => {
           </div>
         </div>
         <div>
-          <div className="image-container flex flex-row flex-wrap justify-around">
+          <div className="image-container flex flex-row flex-wrap justify-around bg-slate-950/10 rounded-xl p-2">
             <fieldset className="image-select gap-2">
               {images.map((imageObj) => {
                 return (
@@ -251,7 +252,7 @@ export const FoodForm = ({ currentUser }) => {
             </fieldset>
           </div>
         </div>
-        <div className="button-container flex justify-center">
+        <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2">
           <button
             className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
             onClick={(event) => {
