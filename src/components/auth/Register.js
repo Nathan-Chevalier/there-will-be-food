@@ -65,7 +65,7 @@ export const Register = (props) => {
           <h1>LOGO HERE</h1>
         </div>
         <div className="flex flex-col gap-4 bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
-          <h2 className="shadow-text">Please Register</h2>
+          <h2 className="shadow-text">Please Register:</h2>
           <fieldset>
             <div className="form-group">
               <input
@@ -93,6 +93,7 @@ export const Register = (props) => {
           </fieldset>
         </div>
         <div className="image-container bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
+          <div>Choose an Avatar:</div>
           <fieldset className="image-select flex flex-row flex-wrap justify-between gap-x-8 gap-y-4 m-2">
             {images.map((imageObj) => {
               return (
