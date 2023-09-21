@@ -56,7 +56,7 @@ export const Register = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-64">
+    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-3">
       <form
         className="flex flex-col bg-[#a47f74] w-6/12 gap-y-2 p-6 m-5 rounded-3xl"
         onSubmit={handleRegister}
@@ -93,26 +93,27 @@ export const Register = (props) => {
           </fieldset>
         </div>
         <div className="image-container bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
-          <div>Choose an Avatar:</div>
+          <div className="shadow-text">Choose an Avatar:</div>
           <fieldset className="image-select flex flex-row flex-wrap justify-between gap-x-8 gap-y-4 m-2">
             {images.map((imageObj) => {
               return (
-                <label key={imageObj.id}>
-                  <div className="image-radio">
-                    <input
-                      type="radio"
-                      id="image"
-                      name={imageObj.name}
-                      value={imageObj.id}
-                      checked={customer.userImageId === imageObj.id}
-                      onChange={(event) => {
-                        const copy = { ...customer };
-                        copy.userImageId = parseInt(event.target.value);
-                        setCustomer(copy);
-                      }}
-                    />
-                  </div>
-                  <img src={imageObj.address} alt={imageObj.name} />
+                <label key={imageObj.id} className="basis-36">
+                  <img
+                    src={imageObj.address}
+                    alt={imageObj.name}
+                    value={customer.userImageId}
+                    className={
+                      customer.userImageId === imageObj.id
+                        ? // ? Selected Image style ternary
+                          "border-green-300 border-4 rounded-2xl hover:cursor-pointer"
+                        : "hover:cursor-pointer opacity-60"
+                    }
+                    onClick={() => {
+                      const copy = { ...customer };
+                      copy.userImageId = parseInt(imageObj.id);
+                      setCustomer(copy);
+                    }}
+                  />
                 </label>
               );
             })}
