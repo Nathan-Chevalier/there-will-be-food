@@ -219,7 +219,6 @@ export const FoodForm = ({ currentUser }) => {
                         <input
                           type="radio"
                           id="storage"
-                          className="checked:bg-red-800"
                           value={storageObj.id}
                           checked={userValues.storageId === storageObj.id}
                           onChange={(event) => {
@@ -246,6 +245,7 @@ export const FoodForm = ({ currentUser }) => {
                     <img
                       src={imageObj.address}
                       alt={imageObj.name}
+                      value={userValues.imageId}
                       className={
                         userValues.imageId === imageObj.id
                           ? // ? Selected Image style ternary
