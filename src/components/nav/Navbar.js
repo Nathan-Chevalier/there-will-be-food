@@ -6,6 +6,7 @@ import freezerButton from "../../assets/images/freezerButton.png";
 import refrigeratorButton from "../../assets/images/refrigeratorButton.png";
 import allButton from "../../assets/images/allButton.png";
 import addButton from "../../assets/images/addButton.png";
+import foodLogo from "../../assets/images/foodLogo.png";
 
 export const Navbar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -25,7 +26,12 @@ export const Navbar = ({ currentUser }) => {
 
   return (
     <div className="flex justify-center bg-[#995e40] rounded">
-      <ul className="navbar flex justify-evenly bg-[#e8d7b1] border-[12px] border-white rounded-3xl p-2 w-10/12">
+      <ul className="navbar flex justify-evenly bg-[#e8d7b1] border-[12px] border-white rounded-3xl p-2 w-11/12">
+        <li className="">
+          <Link to="/">
+            <img src={foodLogo} alt="Landing Page" />
+          </Link>
+        </li>
         <li className="navbar__item">
           <Link className="navbar__link" to="/pantry">
             <img src={pantryButton} alt="View Pantry" />
