@@ -30,7 +30,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica mt-72 ">
+    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-72">
       <section className="flex flex-col bg-[#a47f74] w-6/12 gap-y-2 p-6 m-5 rounded-3xl">
         <form className="flex flex-col gap-y-4" onSubmit={handleLogin}>
           <div className="flex self-center mb-12">
