@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Landing = () => {
   return (
-    <ul className="navbar">
+    <ul className="navbar h-[600px]">
       <li className="navbar__item">
         <Link className="navbar__link" to="/pantry">
           Pantry
