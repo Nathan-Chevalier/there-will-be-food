@@ -77,7 +77,7 @@ export const FoodForm = ({ currentUser }) => {
 
   return (
     <div className="flex justify-center bg-[#a4bdba] font-helvetica ">
-      <form className="flex flex-col bg-[#a47f74] w-5/12 gap-y-2 p-6 m-5">
+      <form className="flex flex-col bg-[#a47f74] w-6/12 gap-y-2 p-6 m-5">
         <div className="flex justify-center">
           <div className="text-5xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
             Add Food
