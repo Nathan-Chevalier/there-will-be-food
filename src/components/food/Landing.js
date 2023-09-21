@@ -7,7 +7,7 @@ import addSplash from "../../assets/images/addSplash.png";
 
 export const Landing = () => {
   return (
-    <ul className="navbar h-[600px]">
+    <ul className="flex justify-around items-center h-fill py-24 bg-[#e8d7b1] rounded-3xl">
       <li className="navbar__item">
         <Link className="navbar__link" to="/pantry">
           <img src={pantrySplash} alt="View Pantry" />
