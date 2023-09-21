@@ -1,31 +1,36 @@
 import { Link } from "react-router-dom";
+import pantrySplash from "../../assets/images/pantrySplash.png";
+import refrigeratorSplash from "../../assets/images/refrigeratorSplash.png";
+import freezerSplash from "../../assets/images/freezerSplash.png";
+import allSplash from "../../assets/images/allSplash.png";
+import addSplash from "../../assets/images/addSplash.png";
 
 export const Landing = () => {
   return (
     <ul className="navbar h-[600px]">
       <li className="navbar__item">
         <Link className="navbar__link" to="/pantry">
-          Pantry
+          <img src={pantrySplash} alt="View Pantry" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/fridge">
-          Refrigerator
+          <img src={refrigeratorSplash} alt="View Refrigerator" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/freezer">
-          Freezer
+          <img src={freezerSplash} alt="View Freezer" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/all">
-          View All
+          <img src={allSplash} alt="View All" />
         </Link>
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/food/new">
-          Add Food
+          <img src={addSplash} alt="View All" />
         </Link>
       </li>
     </ul>

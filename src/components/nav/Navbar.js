@@ -6,6 +6,7 @@ import pantryButton from "../../assets/images/pantryButton.png";
 import freezerButton from "../../assets/images/freezerButton.png";
 import refrigeratorButton from "../../assets/images/refrigeratorButton.png";
 import allButton from "../../assets/images/allButton.png";
+import addButton from "../../assets/images/addButton.png";
 
 export const Navbar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export const Navbar = ({ currentUser }) => {
       </li>
       <li className="navbar__item">
         <Link className="navbar__link" to="/food/new">
-          Add Food
+          <img src={addButton} alt="View All" />
         </Link>
       </li>
       <li>
