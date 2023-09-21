@@ -24,7 +24,7 @@ export const Navbar = ({ currentUser }) => {
   }, [currentUser.userImageId]);
 
   return (
-    <div className="flex justify-center bg-[#995e40] rounded-3xl">
+    <div className="flex justify-center bg-[#995e40] rounded">
       <ul className="navbar flex justify-evenly bg-[#e8d7b1] border-[12px] border-white rounded-3xl p-2 w-10/12">
         <li className="navbar__item">
           <Link className="navbar__link" to="/pantry">
