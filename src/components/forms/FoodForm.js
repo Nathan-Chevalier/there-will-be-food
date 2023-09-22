@@ -6,6 +6,7 @@ import {
   getAllUnits,
 } from "../../services/formService";
 import { useNavigate } from "react-router-dom";
+import addFood from "../../assets/images/addFood.png";
 
 export const FoodForm = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -77,8 +78,11 @@ export const FoodForm = ({ currentUser }) => {
 
   return (
     <div className="flex justify-center bg-[#a4bdba] font-helvetica ">
-      <div className="flex justify-center flex-1">
-        <form className="flex flex-col bg-[#a47f74] w-6/12 gap-y-2 p-6 m-5 rounded-3xl">
+      <div className="flex justify-center items-center flex-1">
+        <div className="bg-[#e8d7b1] pl-6 pr-4 py-10 rounded-l-3xl border-white border-y-8 border-l-8">
+          <img src={addFood} alt="Add Food" />
+        </div>
+        <form className="flex flex-col bg-[#e8d7b1] w-6/12 gap-y-2 p-6 my-5 rounded-3xl border-white border-8">
           {/* Data container */}
           <div className="flex flex-col gap-2">
             {/* Name,Type, expiration Container */}
