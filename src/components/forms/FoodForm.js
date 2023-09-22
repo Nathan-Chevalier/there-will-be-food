@@ -82,7 +82,7 @@ export const FoodForm = ({ currentUser }) => {
         <div className="bg-[#e8d7b1] pl-6 pr-4 py-10 rounded-l-3xl border-white border-y-8 border-l-8">
           <img src={addFood} alt="Add Food" />
         </div>
-        <form className="flex flex-col bg-[#e8d7b1] w-6/12 gap-y-2 p-6 my-5 rounded-3xl border-white border-8">
+        <form className="flex flex-col bg-[#e8d7b1] w-6/12 gap-y-2 p-6 my-2 rounded-3xl border-white border-8">
           {/* Data container */}
           <div className="flex flex-col gap-2">
             {/* Name,Type, expiration Container */}
@@ -266,7 +266,7 @@ export const FoodForm = ({ currentUser }) => {
           </div>
           <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <button
-              className="btn-save"
+              className="bg-[#bd956d] hover:bg-[#995e40] text-white font-bold py-2 px-4 border-4 border-white hover:border-white rounded"
               onClick={(event) => {
                 handleSaveFood(event);
               }}
