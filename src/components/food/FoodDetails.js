@@ -26,14 +26,14 @@ export const FoodDetails = () => {
 
   return (
     <div className="flex justify-center bg-[#a4bdba] font-helvetica gap-2">
-      <div className="flex bg-[#a47f74] w-8/12 gap-4 p-6 m-16 rounded-lg">
+      <div className="flex bg-[#e8d7b1] w-7/12 gap-2 p-6 my-2 rounded-3xl border-white border-8">
         <div className="flex flex-col justify-between">
           <div className="food-image">
             <img src={food.image?.address} alt={food.image?.name} />
           </div>
           <div className="flex flex-col gap-4">
             <button
-              className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-900 hover:border-red-500 rounded"
+              className="btn-save"
               onClick={() => {
                 handleDeleteFood();
               }}
@@ -41,7 +41,7 @@ export const FoodDetails = () => {
               Delete
             </button>
             <button
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
+              className="btn-save"
               onClick={() => {
                 navigate(`/food/${foodId}/edit`);
               }}
