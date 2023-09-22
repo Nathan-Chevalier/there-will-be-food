@@ -4,7 +4,7 @@ export const FoodListItem = ({ food }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-column w-3/12 basis-[32%] p-[10px] bg-gradient-to-t from-[#6d6559] to-[#574e3f] text-black justify-between">
+    <div className="flex flex-column w-3/12 basis-[32%] p-[10px] bg-[#c09571] rounded-2xl text-black justify-between border-white border-4">
       <div className="flex items-center">
         <img
           className="aspect-square w-full min-w-full"
