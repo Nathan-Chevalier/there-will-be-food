@@ -93,7 +93,7 @@ export const FoodForm = ({ currentUser }) => {
                   <input
                     id="name"
                     type="text"
-                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#995e40]"
                     placeholder="Input food name..."
                     onChange={(event) => {
                       const copy = { ...userValues };
@@ -152,7 +152,7 @@ export const FoodForm = ({ currentUser }) => {
                 <label className="shadow-text mb-1">Description: </label>
                 <input
                   id="description"
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#995e40]"
                   placeholder="Input description (Optional)..."
                   onChange={(event) => {
                     const copy = { ...userValues };
@@ -172,7 +172,7 @@ export const FoodForm = ({ currentUser }) => {
                       id="quantity"
                       type="number"
                       placeholder="Input quantity..."
-                      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-20 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-20 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#995e40]"
                       value={userValues.quantity}
                       onChange={(event) => {
                         const copy = { ...userValues };
@@ -249,7 +249,7 @@ export const FoodForm = ({ currentUser }) => {
                         className={
                           userValues.imageId === imageObj.id
                             ? // ? Selected Image style ternary
-                              "border-green-300 border-4 rounded-2xl hover:cursor-pointer"
+                              "focus: border-amber-900 border-4 rounded-2xl hover:cursor-pointer"
                             : "hover:cursor-pointer opacity-60"
                         }
                         onClick={() => {
@@ -266,7 +266,7 @@ export const FoodForm = ({ currentUser }) => {
           </div>
           <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <button
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded"
+              className="bg-[#bd956d] hover:bg-[#995e40] text-white font-bold py-2 px-4 border-4 border-white hover:border-white rounded"
               onClick={(event) => {
                 handleSaveFood(event);
               }}
