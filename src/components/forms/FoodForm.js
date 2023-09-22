@@ -266,7 +266,7 @@ export const FoodForm = ({ currentUser }) => {
           </div>
           <div className="button-container flex justify-center bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
             <button
-              className="bg-[#bd956d] hover:bg-[#995e40] text-white font-bold py-2 px-4 border-4 border-white hover:border-white rounded"
+              className="btn-save"
               onClick={(event) => {
                 handleSaveFood(event);
               }}
