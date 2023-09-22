@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         mooli: ["Mooli"],
       },
+      backgroundColor: {
+        primary: "#a4bdba",
+      },
     },
   },
   plugins: [],
