@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAllFood } from "../../services/foodService";
 import { FoodListItem } from "../food/FoodListItem";
+import viewAll from "../../assets/images/viewAll.png";
 
 export const FoodList = ({ currentUser }) => {
   const [foods, setFoods] = useState([]);
@@ -36,7 +37,9 @@ export const FoodList = ({ currentUser }) => {
             className="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-60 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#c09571]"
           />
         </div>
-        <div>IMAGE HERE</div>
+        <div className="pb-2">
+          <img src={viewAll} alt="View All" />
+        </div>
       </div>
       <div className="flex flex-row flex-wrap justify-around items-start gap-y-5 pt-5 bg-[#e8d7b1] border-white border-8 rounded-3xl">
         {filteredFoods.map((food) => {
