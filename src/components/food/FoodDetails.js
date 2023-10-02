@@ -25,7 +25,7 @@ export const FoodDetails = () => {
   };
 
   return (
-    <div className="flex justify-center bg-[#a4bdba] font-helvetica gap-2">
+    <div className="flex justify-center font-helvetica gap-2">
       <div className="flex bg-[#e8d7b1] w-7/12 mt-20 p-4 rounded-3xl border-white border-8">
         <div className="flex bg-[#bd956d] w-full gap-2 p-6 my-2 rounded-3xl border-white border-8">
           <div className="flex flex-col justify-between">

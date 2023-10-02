@@ -22,7 +22,7 @@ export const FridgeList = ({ currentUser }) => {
   }, [foods, searchTerm]);
 
   return (
-    <div className="flex flex-col bg-[#274857] pb-6 mt-2 rounded-3xl">
+    <div className="flex flex-col bg-[#274857] pt-2 px-6 pb-6 mt-2 rounded-3xl">
       <div className="flex justify-between pt-2">
         <div className="flex items-center bg-[#b2c7c8] w-max ml-8 pr-8 py-2 pt-2 rounded-t-xl border-x-4 border-white border-t-4">
           <span className="shadow-text mx-10 bg-[#274857] px-2">
@@ -37,7 +37,7 @@ export const FridgeList = ({ currentUser }) => {
             className="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-60 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#c09571]"
           />
         </div>
-        <div className="pb-2">
+        <div className="pb-2 pr-6">
           <img src={viewRefrigerator} alt="View All" />
         </div>
       </div>

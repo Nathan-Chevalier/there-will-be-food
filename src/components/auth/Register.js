@@ -57,7 +57,7 @@ export const Register = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-3">
+    <div className="flex flex-col items-center font-helvetica py-3">
       <form
         className="flex flex-col bg-[#e8d7b1] w-4/12 gap-y-4 p-6 m-5 rounded-3xl border-white border-8"
         onSubmit={handleRegister}
