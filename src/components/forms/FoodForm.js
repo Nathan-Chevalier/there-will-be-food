@@ -77,7 +77,7 @@ export const FoodForm = ({ currentUser }) => {
   };
 
   return (
-    <div className="flex justify-center bg-[#a4bdba] font-helvetica ">
+    <div className="flex justify-center font-helvetica ">
       <div className="flex justify-center items-center flex-1">
         <div className="bg-[#e8d7b1] pl-6 pr-4 py-10 rounded-l-3xl border-white border-y-8 border-l-8">
           <img src={addFood} alt="Add Food" />

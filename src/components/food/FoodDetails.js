@@ -25,7 +25,7 @@ export const FoodDetails = () => {
   };
 
   return (
-    <div className="flex justify-center bg-[#a4bdba] font-helvetica gap-2">
+    <div className="flex justify-center font-helvetica gap-2">
       <div className="flex bg-[#e8d7b1] w-7/12 mt-20 p-4 rounded-3xl border-white border-8">
         <div className="flex bg-[#bd956d] w-full gap-2 p-6 my-2 rounded-3xl border-white border-8">
           <div className="flex flex-col justify-between">
@@ -54,15 +54,15 @@ export const FoodDetails = () => {
           <div className="information-container flex flex-col flex-1 justify-between">
             <div className="flex justify-between flex-col flex-1">
               <div className="flex justify-between pb-6">
-                <div className="text-4xl text-white font-semibold px-6 ml-6 w-max py-4 rounded-b-lg border-t-3 border-white border-4 mx-2 -translate-y-7 bg-slate-950/10">
+                <div className="text-4xl text-white font-semibold px-6 ml-6 w-max h-max py-4 rounded-b-lg border-t-3 border-white border-4 mx-2 -translate-y-7 bg-[#143736]">
                   {food.name}
                 </div>
-                <div className="flex  flex-col justify-center items-end">
-                  <div className="bg-[#14373b] font-semibold py-0.5 px-2 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg mb-2">
-                    <span className="shadow-text">{food.type?.name}</span>
+                <div className="flex flex-col justify-center items-end">
+                  <div className="bg-[#14373b] font-semibold py-2 px-4 text-white border-white border-2 rounded-lg mb-2">
+                    <span className="text-lg">{food.type?.name}</span>
                   </div>
-                  <div className="bg-[#1c0702] py-0.5 px-2 font-semibold text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg my-2">
-                    <span className="shadow-text">{food.storage?.name}</span>
+                  <div className="bg-[#1c0702] py-2 px-4 font-semibold text-white border-white border-2 rounded-lg my-2">
+                    <span className="text-lg">{food.storage?.name}</span>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,9 @@ export const FoodDetails = () => {
                     {food.quantity}
                   </span>
                   <span className="bg-[#bd956d] px-2 py-1 rounded-r-lg border-white border-2 border-l-0 text-white font-semibold">
-                    {food.quantityUnit?.name}
+                    {food.quantity > 1
+                      ? `${food.quantityUnit?.name}s`
+                      : food.quantityUnit?.name}
                   </span>
                 </div>
               </div>
