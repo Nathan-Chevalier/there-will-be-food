@@ -59,13 +59,13 @@ export const Register = (props) => {
   return (
     <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-3">
       <form
-        className="flex flex-col bg-[#e8d7b1] w-8/12 gap-y-2 p-6 m-5 rounded-3xl border-white border-8"
+        className="flex flex-col bg-[#e8d7b1] w-4/12 gap-y-4 p-6 m-5 rounded-3xl border-white border-8"
         onSubmit={handleRegister}
       >
         <div className="self-center">
           <img src={foodLogo} alt="There Will Be Food Logo" />
         </div>
-        <div className="flex flex-col gap-4 bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
+        <div className="flex flex-col gap-4 bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2 translate-y-4">
           <h2 className="shadow-text">Please Register:</h2>
           <fieldset>
             <div className="form-group">
@@ -74,7 +74,7 @@ export const Register = (props) => {
                 type="text"
                 id="firstName"
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#995e40]"
-                placeholder="Enter your first name"
+                placeholder="Enter your first name..."
                 required
                 autoFocus
               />
@@ -87,13 +87,13 @@ export const Register = (props) => {
                 type="email"
                 id="email"
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-[#995e40]"
-                placeholder="Email address"
+                placeholder="Enter your email address..."
                 required
               />
             </div>
           </fieldset>
         </div>
-        <div className="image-container bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2">
+        <div className="image-container bg-slate-950/10 rounded-xl p-2 border-slate-950/20 border-2 translate-y-7">
           <div className="shadow-text">Choose an Avatar:</div>
           <fieldset className="image-select flex flex-row flex-wrap justify-between gap-x-8 gap-y-4 m-2">
             {images.map((imageObj) => {
@@ -122,7 +122,7 @@ export const Register = (props) => {
         </div>
 
         <fieldset>
-          <div className="flex justify-center pt-4">
+          <div className="flex justify-center translate-y-14">
             <button className="btn-save" type="submit">
               Register
             </button>
