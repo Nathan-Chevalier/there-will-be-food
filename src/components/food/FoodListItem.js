@@ -14,7 +14,7 @@ export const FoodListItem = ({ food }) => {
       </div>
       <div className="flex-1 flex flex-col flex-wrap justify-between">
         <h3
-          className="text-2xl text-white font-semibold px-6 ml-6 w-max py-2 rounded-b-lg border-t-2 border-white border-4 mx-2 -translate-y-3 bg-slate-950/10"
+          className="text-2xl text-[#f3dbc2] font-semibold px-6 ml-6 w-max py-2 rounded-b-lg border-t-2 border-white border-4 mx-2 -translate-y-3 bg-[#143736]"
           onClick={() => {
             navigate(`/food/${food.id}`);
           }}
@@ -34,15 +34,11 @@ export const FoodListItem = ({ food }) => {
       </div>
       <div className="flex-initial flex flex-col justify-between">
         <div className="flex flex-col justify-items-end items-end">
-          <div className="bg-[#14373b] font-semibold py-0.5 px-2 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg">
-            <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
-              {food.type.name}
-            </span>
+          <div className="bg-[#14373b] font-semibold py-0.5 px-2 text-white border-white border-2 rounded-lg">
+            <span>{food.type.name}</span>
           </div>
-          <div className="bg-[#1c0702] py-0.5 px-2 font-semibold text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)] rounded-lg my-2">
-            <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
-              {food.storage.name}
-            </span>
+          <div className="bg-[#1c0702] py-0.5 px-2 font-semibold text-white border-white border-2 rounded-lg my-2">
+            <span>{food.storage.name}</span>
           </div>
         </div>
         <div className="flex items-center justify-end">
@@ -50,7 +46,9 @@ export const FoodListItem = ({ food }) => {
             {food.quantity}
           </span>
           <span className="bg-[#bd956d] px-2 py-1 rounded-r-lg border-white border-2 border-l-0 text-white font-semibold">
-            {food.quantityUnit.name}
+            {food.quantity > 1
+              ? `${food.quantityUnit.name}s`
+              : food.quantityUnit.name}
           </span>
         </div>
       </div>
