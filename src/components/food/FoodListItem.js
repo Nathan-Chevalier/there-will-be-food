@@ -14,7 +14,7 @@ export const FoodListItem = ({ food }) => {
       </div>
       <div className="flex-1 flex flex-col flex-wrap justify-between">
         <h3
-          className="text-3xl text-white font-semibold px-6 ml-6 w-max py-2 rounded-b-lg border-t-2 border-white border-4 mx-2 -translate-y-3 bg-slate-950/10"
+          className="text-2xl text-white font-semibold px-6 ml-6 w-max py-2 rounded-b-lg border-t-2 border-white border-4 mx-2 -translate-y-3 bg-slate-950/10"
           onClick={() => {
             navigate(`/food/${food.id}`);
           }}
