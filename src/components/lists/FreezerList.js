@@ -41,7 +41,7 @@ export const FreezerList = ({ currentUser }) => {
           <img src={viewFreezer} alt="View All" />
         </div>
       </div>
-      <div className="flex flex-row flex-wrap justify-around items-start gap-y-5 pt-5 bg-[#e8d7b1] border-white border-8 rounded-3xl">
+      <div className="flex flex-row flex-wrap justify-around items-start gap-y-5 py-5 bg-[#e8d7b1] border-white border-8 rounded-3xl">
         {filteredFoods.map((food) => {
           return <FoodListItem food={food} />;
         })}
