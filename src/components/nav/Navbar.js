@@ -26,8 +26,8 @@ export const Navbar = ({ currentUser }) => {
 
   return (
     <div className="flex justify-center bg-[#995e40] rounded">
-      <ul className="navbar flex justify-evenly bg-[#e8d7b1] border-[12px] border-white rounded-3xl p-2 w-11/12">
-        <li className="">
+      <ul className="navbar flex justify-between items-center bg-[#e8d7b1] border-[12px] border-white rounded-3xl p-2 w-11/12">
+        <li className="relative">
           <Link to="/">
             <img src={foodLogo} alt="Landing Page" />
           </Link>
@@ -57,14 +57,14 @@ export const Navbar = ({ currentUser }) => {
             <img src={addButton} alt="View All" />
           </Link>
         </li>
-        <li></li>
         {localStorage.getItem("honey_user") ? (
-          <li className="flex">
-            <img src={image.address} alt={image.name} />
-            <div className="flex flex-col items-center justify-center">
-              {currentUser.firstName}
+          <li className="flex justify-center items-center bg-[#bd956d] p-2 rounded-2xl scale-90 border-white border-4">
+            <div className="flex flex-col justify-center items-center bg-slate-950/10 h-min px-2 mx-2 rounded-2xl border-slate-950/10 border-2">
+              <span className="text-white shadow-text m-1 font-bold">
+                {currentUser.firstName}
+              </span>
               <Link
-                className="navbar__link"
+                className="btn-save mb-2 scale-75"
                 to=""
                 onClick={() => {
                   localStorage.removeItem("honey_user");
@@ -74,6 +74,7 @@ export const Navbar = ({ currentUser }) => {
                 Logout
               </Link>
             </div>
+            <img className="" src={image.address} alt={image.name} />
           </li>
         ) : (
           ""
