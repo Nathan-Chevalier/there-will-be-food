@@ -31,8 +31,8 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-56">
-      <section className="flex flex-col bg-[#e8d7b1] w-4/12 gap-y-2 p-6 m-5 rounded-3xl border-white border-8">
+    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-64">
+      <section className="card">
         <form className="flex flex-col gap-y-4" onSubmit={handleLogin}>
           <div className="flex self-center">
             <img src={foodLogo} alt="There Will Be Food Logo" />

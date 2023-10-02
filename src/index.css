@@ -9,4 +9,11 @@
   .btn-save {
     @apply bg-[#bd956d] hover:bg-[#995e40] text-white font-bold py-2 px-4 border-4 border-white hover:border-white rounded-2xl;
   }
+  .card {
+    @apply bg-[#e8d7b1] pl-6 pr-4 py-10 rounded-l-3xl border-white border-y-8 border-l-8;
+  }
+}
+
+html {
+  background-color: #a4bdba;
 }
