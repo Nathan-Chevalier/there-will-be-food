@@ -31,8 +31,8 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#a4bdba] font-helvetica py-64">
-      <section className="card">
+    <div className="flex flex-col items-center justify-center bg-[#a4bdba] font-helvetica w-screen h-screen">
+      <section className="flex flex-col bg-[#e8d7b1] w-3/12 p-6 rounded-3xl border-white border-8">
         <form className="flex flex-col gap-y-4" onSubmit={handleLogin}>
           <div className="flex self-center">
             <img src={foodLogo} alt="There Will Be Food Logo" />
@@ -61,7 +61,7 @@ export const Login = () => {
           </div>
         </form>
       </section>
-      <section>
+      <section className="-translate-y-4">
         <Link to="/register">
           <span className="btn-save">Not a member yet?</span>
         </Link>
