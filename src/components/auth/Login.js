@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getUserByEmail } from "../../services/userService";
-import foodLogo from "../../assets/images/foodLogo.png";
+import foodLogo from "../../assets/images/foodLogoLarge.png";
 
 export const Login = () => {
   const [email, set] = useState("");
@@ -32,7 +32,7 @@ export const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-[#a4bdba] font-helvetica w-screen h-screen">
-      <section className="flex flex-col bg-[#e8d7b1] w-3/12 p-6 rounded-3xl border-white border-8">
+      <section className="flex flex-col bg-[#e8d7b1] w-4/12 p-6 rounded-3xl border-white border-8">
         <form className="flex flex-col gap-y-4" onSubmit={handleLogin}>
           <div className="flex self-center">
             <img src={foodLogo} alt="There Will Be Food Logo" />
