@@ -26,7 +26,7 @@ export const FridgeList = ({ currentUser }) => {
       <div className="flex justify-between pt-2">
         <div className="flex items-center bg-[#b2c7c8] w-max ml-8 pr-8 py-2 pt-2 rounded-t-xl border-x-4 border-white border-t-4">
           <span className="shadow-text mx-10 bg-[#274857] px-2">
-            Search Food:
+            Search Refrigerator:
           </span>
           <input
             onChange={(event) => {
